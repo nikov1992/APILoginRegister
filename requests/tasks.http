@@ -1,0 +1,26 @@
+###
+
+GET  http://localhost:3000
+
+{
+
+}
+
+###
+GET  http://localhost:3000/Login
+
+
+{
+    
+}
+
+###
+POST  http://localhost:3000/SendTask
+Content-Type: application/json
+
+{
+    "Name": "nicolas",
+    "Surname": "Lopez",
+    "Age":"31"
+
+}

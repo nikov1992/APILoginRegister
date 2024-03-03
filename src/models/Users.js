@@ -17,6 +17,11 @@ const User = new Schema({
     Mail: {
         type: String,
         trim: true,
+        unique: true, //UNIQUE EMAIL
+    },
+    Pass: {
+        type: String,
+        trim: true,
     },
 }, {
     timestamps: true,  //me indica cuando se crea el usuario

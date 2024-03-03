@@ -14,10 +14,10 @@ const User = new Schema({
         type: Number,
         trim: true,
     },
-    Mail: {
+    Email: {
         type: String,
         trim: true,
-        unique: true, //UNIQUE EMAIL
+        // unique: true, //UNIQUE EMAIL
     },
     Pass: {
         type: String,

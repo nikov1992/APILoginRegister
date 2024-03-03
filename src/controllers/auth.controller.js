@@ -1,8 +1,26 @@
-
 import Usuario from '../models/Users.js'
+import bcrypt from 'bcryptjs'
+
 export const register = async (req , res )=>{
-    const newUsuario = new Usuario({Name: req.body.Name , Surname: req.body.Surname , Age: req.body.Age, Mail: req.body.Mail, Pass: req.body.Pass})
-    await newUsuario.save();
+    const {Name , Surname , Age , Email , Pass} = req.body;
+
+    const passwordHash = await bcrypt.hash(Pass , 10)
+    // this for aply the hash code
+
+    const newUsuario = new Usuario(
+        {Name,
+        Surname, 
+        Age,
+        Email, 
+        Pass: passwordHash})
+
     console.log(newUsuario)
-    res.json('new user crated whit email')}
+    
+    res.json({
+        id: newUsuario._id,
+        username: newUsuario.Name, 
+    }
+    )}
+
+
 

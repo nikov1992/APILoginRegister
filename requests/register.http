@@ -3,9 +3,9 @@ POST  http://localhost:3000/api/register
 Content-Type: application/json
 
 {
-    "Name": "Soldedad",
-    "Surname": "Peasdasdasredo",
-    "Age":"22",
-    "Mail":"soledad@gmaiasdasdl.com",
+    "Name": "Sol",
+    "Surname": "Peas",
+    "Age":"10",
+    "Email":"178990@90.com",
     "Pass": "12"
 }

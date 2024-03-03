@@ -8,7 +8,7 @@ const router = Router() // lo ejecuto
 
 router.post("/register" , register)
 
-
+ 
 
 //point to login page
 router.get('/Login', (req,res) => {

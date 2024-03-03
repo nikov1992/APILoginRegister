@@ -19,8 +19,18 @@ POST  http://localhost:3000/SendTask
 Content-Type: application/json
 
 {
-    "Name": "nicolas",
-    "Surname": "Lopez",
+    "Name": "f!",
+    "Surname": "monkkey",
     "Age":"31"
 
+}
+###
+POST  http://localhost:3000/SendUser
+Content-Type: application/json
+
+{
+    "Name": "Nicolas",
+    "Surname": "Lopez",
+    "Age":"22",
+    "Mail":"Fulano@gmail.com"
 }

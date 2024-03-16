@@ -17,7 +17,7 @@ const User = new Schema({
     Email: {
         type: String,
         trim: true,
-        // unique: true, //UNIQUE EMAIL
+        unique: true, //UNIQUE EMAIL
     },
     Pass: {
         type: String,

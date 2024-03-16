@@ -1,11 +1,16 @@
 ###
-POST  http://localhost:3000/api/register
+POST  http://localhost:3000/register
 Content-Type: application/json
 
 {
-    "Name": "Sol",
-    "Surname": "Peas",
-    "Age":"10",
-    "Email":"178990@90.com",
-    "Pass": "12"
+    "Name": "pepe",
+    "Surname": "nico",
+    "Age": 10,
+    "Email": "nicd@gmail.com",
+    "Pass":"niasaqwesdaqwesasddddc"
+
 }
+
+
+
+

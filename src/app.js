@@ -12,8 +12,13 @@ app.use(express.json());
 
 app.use(express.text()); //for text common user complet
 
+app.use(AuthRoutes);
+
 app.use("/api" , AuthRoutes); //for separete all mis pages with pre-API
 
+app.get('/', (req, res)=>{
+    res.json({message:"welcom to oxygen token"})
+})
 
 export default app;
 

@@ -2,10 +2,10 @@ import mongoose from 'mongoose'
 import config from './config.js'
 
 
+//using .env
 
 (async()=> {
-    const db = await mongoose.connect(config.mongodbURL) // no se ppuede poner direcciones dentro del codigo
-    // usaremos variables de entorno.
+    const db = await mongoose.connect(config.mongodbURL)
 
     console.log('Database is connected to:' , db.connection.name);
 })()

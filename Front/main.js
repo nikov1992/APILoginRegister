@@ -1,7 +1,6 @@
 
 const formElement = document.getElementById("formularioRegistro")
 
-// let datosUsuario = {Name , Surname , Age , Email , Pass , Company} 
 
 formElement.addEventListener("submit", (event) => {
     event.preventDefault(); //evita el reload del navegador
@@ -16,7 +15,6 @@ formElement.addEventListener("submit", (event) => {
     let datosUsuario = {Name : nombre , Surname : apellido , Company : compañia , Country : pais , Pass : password , Email : email}
     let datosUsuarioJson = JSON.stringify(datosUsuario);
 
-    // console.log(datosUsuarioJson);
     
     fetch("http://localhost:3000/api/register" , {     
         method: 'POST',

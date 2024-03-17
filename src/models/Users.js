@@ -32,14 +32,14 @@ const User = new Schema({
         trim: true,
     },
 }, {
-    timestamps: true,  //me indica cuando se crea el usuario
+    timestamps: true,  // when user is created
     versionKey: false , // esto es para evitar los __v de mongoose / nodemon
 });
 
 // createdAt
 // updatedAt
 
-//me guarda un objeto para luego poder editar o hacer lo que quiera
+//export schema named User
 export default model('Users',User)
 
 

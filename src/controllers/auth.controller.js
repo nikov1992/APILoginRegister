@@ -1,16 +1,7 @@
 import Usuario from '../models/Users.js'
 
-// import {UsuarioJson} from '/Users/nico/Desktop/nodeAPi-rest/Front/main.js'
-
-// app.use(express.json());
-
-
-
 // import bcrypt from 'bcryptjs'
 // import jwt, { TokenExpiredError } from 'jsonwebtoken'
-
-
-// con esto funciona ok
 
 export const register = (req , res )=>{
     const newUsuario = new Usuario({
@@ -25,11 +16,6 @@ export const register = (req , res )=>{
     res.json('saving a new task')
 }
 
-// export const register = (req, res)=>{
-
-//  console.log(req.body)
-
-// }
 
 
 

@@ -4,21 +4,29 @@ const User = new Schema({
     Name: {
         type: String,
         required: true,
-        trim: true /// esto al final lo que hace borra los espacios
+        trim: true, /// esto al final lo que hace borra los espacios
     },
     Surname: {
         type: String,
         trim: true,
     },
-    Age: {
-        type: Number,
-        trim: true,
-    },
+
     Email: {
         type: String,
         trim: true,
-        unique: true, //UNIQUE EMAIL
+        unique: false, //UNIQUE EMAIL
     },
+
+    Company: {
+        type: String,
+        trim: true
+    },
+
+    Country:{
+        type: String,
+        trim: true
+    },
+
     Pass: {
         type: String,
         trim: true,

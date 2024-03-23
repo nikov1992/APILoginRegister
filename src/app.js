@@ -14,12 +14,11 @@ app.use(express.json());
 
 app.use(express.text()); //for text common user complet
 
-app.use(AuthRoutes);
-
 app.use(cors())
 
 app.use("/api" , AuthRoutes); //for separete all mis pages with pre-API
 
+app.use(express.static("public"))
 
 export default app;
 

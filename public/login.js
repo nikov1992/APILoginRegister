@@ -1,7 +1,7 @@
 
-const formElement = document.getElementById("formularioRegistro")
+const formElement = document.getElementById("formularioLogin")
 
-formElement.addEventListener("submit", async(event) => {
+formElement.addEventListener("submit", (event) => {
     event.preventDefault(); //evita el reload del navegador
     let nombre = document.getElementById("nombre").value;
     let apellido = document.getElementById("apellido").value
@@ -11,24 +11,20 @@ formElement.addEventListener("submit", async(event) => {
     let email = document.getElementById("email").value
     let datosUsuario = {Name : nombre , Surname : apellido , Company : compañia , Country : pais , Pass : password , Email : email}
     let datosUsuarioJson = JSON.stringify(datosUsuario);
-    const res = await fetch("http://localhost:3000/api/register", {     
+
+    fetch("http://localhost:3000/api/register" , {     
         method: 'POST',
             headers:
             {
             'Content-Type': 'application/json'
             },
             body: datosUsuarioJson
-        })
-        const resJson = await res.json();
-        if(resJson.redirect){
-            window.location.href = resJson.redirect;
-          }
+    })
 })
 
 
 
 
-////////////PARA DIRECCIONAR TENGO QUE IR AL MAINJS ! 
 
 
 

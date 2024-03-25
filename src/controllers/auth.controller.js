@@ -3,7 +3,10 @@ import Usuario from '../models/Users.js'
 // import bcrypt from 'bcryptjs'
 // import jwt, { TokenExpiredError } from 'jsonwebtoken'
 
-export const register = (req , res )=>{
+
+
+
+async function register(req,res){
     const newUsuario = new Usuario({
         Name: req.body.Name , 
         Surname: req.body.Surname, 
@@ -11,15 +14,21 @@ export const register = (req , res )=>{
         Company: req.body.Company,
         Country: req.body.Country, 
         Pass: req.body.Pass})
-    newUsuario.save();
-    console.log(newUsuario)
-    res.json('saving a new task')
+
+    if(!newUsuario.Name || !newUsuario.Surname || !newUsuario.Pass){
+      return res.status(400).send({status:"Error",message:"Los campos están incompletos"})
+    }else{
+        await newUsuario.save();
+        console.log(newUsuario);
+        return res.status(201).json({ status: "Success", message: "Usuario registrado correctamente", redirect: "/api/login" });
+    }
 }
 
 
+export const methods = {
+    register,
+  }
 
-
-
-
+/////TERMINAR DE PODER REDIRIJIR ! 
 
 

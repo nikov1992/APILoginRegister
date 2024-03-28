@@ -1,17 +1,13 @@
 
-const formElement = document.getElementById("formularioRegistro")
+const formElement = document.getElementById("formularioLogin")
 
 formElement.addEventListener("submit", async(event) => {
     event.preventDefault(); //evita el reload del navegador
-    let nombre = document.getElementById("nombre").value;
-    let apellido = document.getElementById("apellido").value
-    let compañia = document.getElementById("compania").value
-    let pais = document.getElementById("pais").value
     let password = document.getElementById("password").value
     let email = document.getElementById("email").value
-    let datosUsuario = {Name : nombre , Surname : apellido , Company : compañia , Country : pais , Pass : password , Email : email}
+    let datosUsuario = {Pass : password , Email : email}
     let datosUsuarioJson = JSON.stringify(datosUsuario);
-    const res = await fetch("http://localhost:3000/api/register", {     
+    const res = await fetch("http://localhost:3000/api/login", {     
         method: 'POST',
             headers:
             {

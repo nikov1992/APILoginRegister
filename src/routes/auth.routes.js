@@ -11,21 +11,28 @@ const __dirname = dirname(__filename);
 
 router.post("/register" , autenthication.register) 
 
+router.post("/login" , autenthication.login) 
+
+
+
+
 router.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname,"../../public/index.html"));
+});
+
+router.get("/login", (req, res) => {
+    res.sendFile(path.join(__dirname,"../../public/login.html"));
 });
 
 
 router.get("/loginUser", (req, res) => {
     res.sendFile(path.join(__dirname,"../../public/loginUser.html"));
 });
-// router.get("/login" , autenthication.login)
 
+// router.get("/loginUser", (req, res) => {
+//     res.sendFile(path.join(__dirname,"../../public/loginUser.html"));
+// });
 
-
-router.get("/login", (req, res) => {
-    res.sendFile(path.join(__dirname,"../../public/login.html"));
-});
 
 export default router;
 

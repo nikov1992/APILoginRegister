@@ -14,8 +14,6 @@ async function register(req,res){
         Pass: req.body.Pass,
         Pass2: req.body.Pass2})
 
-
-
     if(newUsuario.Pass != newUsuario.Pass2){
       errors.push({text: 'Passwords do not march'})
       console.log("las constraseñas no coinciden")
@@ -45,15 +43,27 @@ async function register(req,res){
     else{
       newUsuario.save();
       console.log(newUsuario)
-      return res.send('sing up susscefully')
+      return res.status(201).json({ status: "Success", message: "Usuario registrado correctamente", redirect: "/api/login" })
     }
+}
 
+async function login (req ,res){
+  const newUsuario = new Usuario({
+    Email: req.body.Email,
+    Pass: req.body.Pass})
+    const emailUser = await Usuario.findOne({Email: newUsuario.Email})
+    if (emailUser){
+      console.log("user loged with: " + newUsuario.Email )
+      return res.status(201).json({ status: "logeado", message: "Usuario registrado correctamente", redirect: "/api/loginUser" })
+    }else{
+      res.status(400).send({status:"Error",message:"EROOR EN LA AUTENTICACION"})
+    }
 
 }
 
-
 export const methods = {
     register,
+    login,
   }
 
 /////TERMINAR DE PODER REDIRIJIR ! 

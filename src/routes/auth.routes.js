@@ -15,6 +15,10 @@ router.get("/register", (req, res) => {
     res.sendFile(path.join(__dirname,"../../public/index.html"));
 });
 
+
+router.get("/loginUser", (req, res) => {
+    res.sendFile(path.join(__dirname,"../../public/loginUser.html"));
+});
 // router.get("/login" , autenthication.login)
 
 

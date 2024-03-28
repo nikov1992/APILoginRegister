@@ -31,6 +31,11 @@ const User = new Schema({
         type: String,
         trim: true,
     },
+
+    Pass2: {
+        type: String,
+        trim: true,
+    },
 }, {
     timestamps: true,  // when user is created
     versionKey: false , // esto es para evitar los __v de mongoose / nodemon

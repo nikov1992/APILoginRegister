@@ -14,6 +14,8 @@ async function register(req,res){
         Pass: req.body.Pass,
         Pass2: req.body.Pass2})
 
+
+
     if(newUsuario.Pass != newUsuario.Pass2){
       errors.push({text: 'Passwords do not march'})
       console.log("las constraseñas no coinciden")
@@ -28,23 +30,24 @@ async function register(req,res){
     if (errors.length > 0 ){
       res.render('../../public/index.html' , {errors})
     }
-    else{
-      res.send('sing up susscefully')
-    }
+
 
     if(!newUsuario.Name || !newUsuario.Surname || !newUsuario.Pass){
       return res.status(400).send({status:"Error",message:"Los campos están incompletos"})
     }
 
-    else {
-      const emailUser = await Usuario.findOne({Email: newUsuario.Email})
-      if (emailUser){
-
-        console.log("este mail ya esta en la base de datos")
-        // req.flash("error_msg", "The Email is already in use.");
-        // return res.redirect("/");
-      }
+    const emailUser = await Usuario.findOne({Email: newUsuario.Email})
+    if (emailUser){
+      res.status(400).send({status:"Error",message:"Email ya registrado"})
+      console.log(newUsuario.Email)
     }
+    
+    else{
+      newUsuario.save();
+      console.log(newUsuario)
+      return res.send('sing up susscefully')
+    }
+
 
 }
 
